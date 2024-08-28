@@ -28,7 +28,7 @@ import { FooterComponent } from './footer/footer.component';
     FooterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [provideClientHydration(), NewstvService],
+  providers: [provideClientHydration(), NewstvService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

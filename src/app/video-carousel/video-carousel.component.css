@@ -1,0 +1,38 @@
+.carousel-container {
+  position: relative;
+  width: 90%;
+  height: 74vh;
+  margin: auto;
+  /* margin-top: 2vh; */
+  overflow: hidden;
+}
+
+.carousel-slide {
+  text-align: center;
+}
+
+video {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}

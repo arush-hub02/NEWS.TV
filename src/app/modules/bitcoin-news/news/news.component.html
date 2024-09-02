@@ -1,8 +1,10 @@
+<app-video-carousel></app-video-carousel>
+
 <div
   class="flex flex-wrap justify-center items-center w-full h-auto gap-10 mt-10"
 >
   <div
-    *ngFor="let data of topHeadlinesData"
+    *ngFor="let data of paginatedData"
     class="relative flex flex-col mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96 h-[50vh] border border-black"
   >
     <div
@@ -38,4 +40,25 @@
       >
     </div>
   </div>
+</div>
+<!-- <div class="mt-5 flex justify-center items-center">
+  <app-pagination
+    [totalItems]="topHeadlinesData.length"
+    [itemsPerPage]="itemsPerPage"
+    [currentPage]="currentPage"
+    (onClick)="changePage($event)"
+  ></app-pagination>
+</div> -->
+
+<div
+  class="mt-5 flex justify-center items-center"
+  *ngIf="topHeadlinesData.length > 0"
+>
+  <!-- Pagination component only appears if there is data -->
+  <app-pagination
+    [totalItems]="topHeadlinesData.length"
+    [itemsPerPage]="itemsPerPage"
+    [currentPage]="currentPage"
+    (onClick)="changePage($event)"
+  ></app-pagination>
 </div>

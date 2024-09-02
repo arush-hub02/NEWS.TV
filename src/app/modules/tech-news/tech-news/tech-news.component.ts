@@ -10,6 +10,8 @@ export class TechNewsComponent {
   constructor(private api: NewstvService) {}
 
   toptechData: any = [];
+  itemsPerPage = 9;
+  currentPage = 1;
 
   ngOnInit(): void {
     this.api.newstvtechservice().subscribe((result) => {
@@ -17,5 +19,16 @@ export class TechNewsComponent {
       // this.topHeadlinesData = result.articles;
       this.toptechData = result.articles;
     });
+  }
+
+  get paginatedData() {
+    const start = (this.currentPage - 1) * this.itemsPerPage;
+    const end = start + this.itemsPerPage;
+
+    return this.toptechData.slice(start, end);
+  }
+
+  changePage(page: number) {
+    this.currentPage = page;
   }
 }
